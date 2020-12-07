@@ -66,8 +66,9 @@ public class DataServiceImpl implements DataService {
         input.close();
 
         String jsonStr = new String(datas, StandardCharsets.UTF_8);
+        logger.info(jsonStr);
 
-        logger.info("数据");
+
 
     }
 }
