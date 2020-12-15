@@ -17,12 +17,12 @@ import java.util.Random;
 
 public class GeneratorData {
     public static void main(String[] args) {
-        String url = "http://localhost:8686/controller/sendData/trafic_data";
+        String url = "http://s1:8686/controller/sendData/trafic_data";
         CloseableHttpClient client = HttpClients.createDefault();
         String result = null;
         String[] locations = {"京","津","冀","晋","蒙","辽","吉","黑","沪","苏","浙","皖","闽","赣","鲁","豫"};
         // 模拟一天的数据
-        String day = "2020-12-07";
+        String day = "2020-12-09";
         // 初始化高斯分布对象
         JDKRandomGenerator generator = new JDKRandomGenerator();
         generator.setSeed(new Date().getTime());
@@ -69,7 +69,7 @@ public class GeneratorData {
                     post.setHeader("Content-Type","application/json");
                     post.setEntity(new StringEntity(data, Charset.forName("UTF-8")));
                     HttpResponse response = client.execute(post);
-                    Thread.sleep(10);
+                    Thread.sleep(1000);
                     // 响应状态200，获取返回内容
                     if(response.getStatusLine().getStatusCode() == HttpStatus.SC_OK){
                         result = EntityUtils.toString(response.getEntity(), "UTF-8");

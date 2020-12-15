@@ -2,8 +2,10 @@
 
 <configuration debug="false">
     <!--定义日志文件的存储地址 勿在 LogBack 的配置中使用相对路径-->
-    <property name="LOG_SYSTEM" value="E:\\logs\\system"/>
-    <property name="LOG_COMMON" value="E:\\logs\\common"/>
+    <!--<property name="LOG_SYSTEM" value="E:\\logs\\system"/>
+    <property name="LOG_COMMON" value="E:\\logs\\common"/>-->
+    <property name="LOG_SYSTEM" value="/opt/bigdata/log/system"/>
+    <property name="LOG_COMMON" value="/opt/bigdata/log/common"/>
 
 
     <!-- %m输出的信息, %p日志级别, %t线程名, %d日期, %c类的全名, %i索引 -->
